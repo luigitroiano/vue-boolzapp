@@ -7,6 +7,9 @@ body{
   font-family: 'Roboto',
   sans-serif;
 }
+li{
+  list-style: none;
+}
 /* utility class */
 .d_flex{
   display: flex;
@@ -16,6 +19,9 @@ body{
 }
 .fs_09em{
   font-size: 0.9em;
+}
+.fs_07em {
+  font-size: 0.7em;
 }
 .txt_lightgrey{
   color: #667687;
@@ -192,7 +198,6 @@ body{
   height: max-content;
   align-items: center;
 }
-
 .contact_selected_info img {
   width: 75px;
   height: 75px;
@@ -211,11 +216,48 @@ body{
   margin-right: 30px;
 }
 /* /contact selected */
+/* messages */
 .messages{
   width: 50vw;
   height: 79%;
   background-image: url("../../assets/img/mine.jpg");
+  flex-direction: column;
+  overflow-y: auto;
 }
+
+.messages_list {
+  margin-top: 30px;
+  flex-direction: column;
+  width: 100%;
+}
+.message_list {
+  background: white;
+  height: fit-content;
+  width: fit-content;
+  min-width: 180px;
+  max-width: 360px;
+  padding: 20px 20px 30px 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  position: relative;
+  overflow-wrap: break-word;
+}
+
+.received {
+  background: white;
+  margin-left: 80px;
+}
+.sent {
+  background: #d5f9ba;
+  align-self: flex-end;
+  margin-right: 80px;
+}
+.message_date {
+  position: absolute;
+  bottom: 6px;
+  right: 8px;
+}
+/* /messages */
 /* typing bar */
 .typing_bar{
   width: 50vw;

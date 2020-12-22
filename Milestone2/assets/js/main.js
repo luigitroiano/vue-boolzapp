@@ -6,7 +6,7 @@ let app = new Vue ({
         name: "Michele",
         avatar: "_1",
         visible: true,
-        message: [
+        messages: [
           {
             date: "10/01/2020 15:30:55",
             text: "Hai portato a spasso il cane?",
@@ -86,5 +86,11 @@ let app = new Vue ({
         ],
       },
     ],
+    activeContact: 0,
+  },
+  methods: {
+    setActiveContact(index){
+      this.activeContact = index;
+    },
   },
 });
