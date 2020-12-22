@@ -1,0 +1,258 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Roboto',
+  sans-serif;
+}
+/* utility class */
+.d_flex{
+  display: flex;
+}
+.fs_11em{
+  font-size: 1.1em;
+}
+.fs_09em{
+  font-size: 0.9em;
+}
+.txt_lightgrey{
+  color: #667687;
+}
+.icon_color{
+  color: #B1B1B1;
+}
+/* /utility class */
+
+/* background color */
+.background{
+  width: 100vw;
+  height: 100vh;
+}
+.bg-green{
+  width: 100%;
+  height: 12%;
+  background-color: #059688;
+}
+.bg-grey {
+  width: 100%;
+  height: 88%;
+  background-color: #D8DBD5;
+}
+/* /background color */
+
+/* container app */
+.container{
+  width: 80vw;
+  height: 96vh;
+  position: absolute;
+  top: 2%;
+  left: 10%;
+  margin: auto;
+}
+/* side menu */
+#side_menu{
+  width: 30vw;
+  height: 96vh;
+}
+/* user */
+.user{
+  width: 30vw;
+  height: 10.5%;
+  background-color: #EAEAEA;
+}
+.user_profile{
+  width: 65%;
+}
+.user_profile img{
+  width: auto;
+  height: 100%;
+  padding: 10px;
+  border-radius: 50%;
+}
+.user_profile .my_name{
+  align-self: center;
+  font-weight: 500;
+}
+.user_icons{
+  width: 35%;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 5px;
+}
+.user_icons i{
+  font-size: 1.7em;
+}
+/* /user */
+
+/* notifications */
+.notifications{
+  width: 30vw;
+  height: 12.5%;
+  background-color: #8DDAFB;
+  align-items: center;
+}
+.notification_icon{
+  width: 65px;
+  height: 65px;
+  margin: 0 15px 0 20px;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+}
+.notifications i{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #8DDAFB;
+  font-size: 1.6em;
+}
+.notification_settings :last-child{
+  text-decoration: underline;
+}
+/* /notifications */
+
+/* search bar */
+.search_bar{
+  width: 30vw;
+  height: 8%;
+  background-color: #f4f4f4fc;
+  padding: 7px 7px 7px 7px;
+}
+.search_bar_container{
+  background-color: white;
+  height: 100%;
+  width: 100%;
+}
+.search_icon{
+  width: 30px;
+  height: 100%;
+  padding: 0 50px 0 20px;
+  position: relative;
+}
+.search_bar i{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5em;
+}
+.search_bar input{
+  width: 80%;
+  border: none;
+}
+/* /search bar */
+
+/* contacts */
+.contacts{
+  width: 30vw;
+  height: 69%;
+  background-color: white;
+  overflow-y: scroll;
+}
+.contact{
+  height: calc(100%/4);
+  border-bottom: 1px solid #eaeaea;
+  position: relative;
+}
+.contact_img{
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin: 15px 0px 0px 30px;
+}
+.contact-name {
+  position: absolute;
+  left: 145px;
+  top: 20px;
+  font-size: 1.3rem;
+}
+/* /contacts */
+/* /side menu */
+
+/* main corp */
+#main_corp {
+  width: 50vw;
+  height: 96vh;
+  border-left: 1px solid lightgrey;
+}
+/* contact selected */
+.contact_selected {
+  width: 50vw;
+  height: 10.5%;
+  background-color: #EAEAEA;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact_selected_info {
+  width: 65%;
+  height: max-content;
+  align-items: center;
+}
+
+.contact_selected_info img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  margin: 0px 15px;
+  padding: 10px;
+  border-radius: 50%;
+}
+.contact_selected_info .infos{
+  width: -webkit-fill-available;
+}
+
+.contact_selected_icons i {
+  color: #b1b1b1;
+  font-size: 1.7em;
+  margin-right: 30px;
+}
+/* /contact selected */
+.messages{
+  width: 50vw;
+  height: 79%;
+  background-image: url("../../assets/img/mine.jpg");
+}
+/* typing bar */
+.typing_bar{
+  width: 50vw;
+  height: 10.5%;
+  background-color: #EAEAEA;
+}
+
+.typing_bar_container {
+  height: 100%;
+  width: 100%;
+  padding: 13px 0;
+}
+
+.typing_bar_icon {
+  width: 30px;
+  height: 100%;
+  padding: 0 50px 0 20px;
+  position: relative;
+}
+
+.typing_bar_icon i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  color: #6B7376;
+}
+
+.typing_bar input {
+  width: 80%;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 0 20px;
+
+}
+/* /typing bar */
+
+/* /main corp */
+/* /container app */
