@@ -102,6 +102,10 @@ let app = new Vue ({
         this.message = "";
         setTimeout(this.receivedMessage, 1000);
       }
+      Vue.nextTick(function () {
+        var div = document.getElementById("messages_list");
+        div.scrollTop = div.scrollHeight;
+      })
     },
     receivedMessage() {
       this.contacts[this.activeContact].messages.push({
@@ -110,5 +114,17 @@ let app = new Vue ({
         status: "received",
       });
     },
+    //funzione per scrollare automaticamente la chat verso il basso dopo aver inviato o ricevuto un messaggio
+    scroll(){
+      let containerChat = this.$refs.allChat;
+      let containerChatScroll = containerChat.scrollHeight;
+      containerChat.scrollTop = containerChatScroll;
+    },
   },
+  mounted() {
+    this.scroll();
+  },
+  updated() {
+    this.scroll();
+  }
 });

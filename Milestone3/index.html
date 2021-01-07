@@ -78,7 +78,7 @@
 
 
 
-          <div class="messages d_flex">
+          <div class="messages d_flex" ref="allChat">
 
             <ul class="messages_list d_flex">
               <li class="message_list fs_11em" v-for="message in contacts[activeContact].messages" :class="(message.status === 'sent') ? 'sent' : 'received'">
