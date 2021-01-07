@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzapp</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b1c0bf61f1.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <!-- background color -->
+      <div class="background">
+        <div class="bg-green"></div>
+        <div class="bg-grey"></div>
+      </div>
+
+      <div class="container d_flex">
+        <div id="side_menu">
+          <div class="user d_flex">
+            <div class="user_profile d_flex">
+              <img src="./assets/img/avatar_7.jpg" alt="mio avatar">
+              <div class="my_name fs_11em">Ciccio Graziani</div>
+            </div>
+            <div class="user_icons d_flex icon_color">
+              <i class="fas fa-circle-notch"></i>
+              <i class="fas fa-comment-alt"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </div>
+          <div class="notifications d_flex">
+            <div class="notification_icon">
+              <i class="fas fa-bell-slash"></i>
+            </div>
+            <div class="notification_settings">
+              <p class="fs_11em">Ricevi notifiche di nuovi messaggi</p>
+              <p class="fs_09em txt_lightgrey">Attiva notifiche desktop</p>
+            </div>
+          </div>
+          <div class="search_bar">
+            <div class="search_bar_container d_flex">
+              <div class="search_icon d_flex" >
+                <i class="fas fa-search icon_color"></i>
+              </div>
+              <input class="fs_11em" type="text" placeholder="Cerca o inizia una nuova chat">
+            </div>
+          </div>
+          <div class="contacts">
+            <div class="contact" v-for="(contact, index) in contacts" v-if="contact.visible" @click="setActiveContact(index)">
+                <img
+                  class="contact_img"
+                  :src="('./assets/img/avatar' + contact.avatar + '.jpg')"
+                  alt=""
+                />
+                <span class="contact-name">{{ contact.name }}</span>
+              </div>
+          </div>
+        </div>
+
+        <div id="main_corp">
+          <div class="contact_selected d_flex">
+            <div class="contact_selected_info d_flex">
+              <img :src="`./assets/img/avatar${contacts[activeContact].avatar}.jpg`" alt="foto avatar"/>
+              <div class="infos">
+                <p>{{contacts[activeContact].name}}</p>
+                <span class="fs_09em txt_lightgrey">Ultimo accesso DATA alle ORARIO</span>
+              </div>
+            </div>
+            <div class="contact_selected_icons icon_color">
+              <i class="fas fa-search"></i>
+              <i class="fas fa-paperclip"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </div>
+
+
+
+          <div class="messages d_flex">
+
+            <ul class="messages_list d_flex">
+              <li class="message_list fs_11em" v-for="message in contacts[activeContact].messages" :class="(message.status === 'sent') ? 'sent' : 'received'">
+                {{ message.text }}<span class="message_date fs_07em txt_lightgrey">30/02/2020 12:34:56</span>
+              </li>
+            </ul>
+
+          </div>
+          <div class="typing_bar">
+            <div class="typing_bar_container d_flex">
+              <div class="typing_bar_icon d_flex" >
+                <i class="far fa-smile"></i>
+              </div>
+              <input class="fs_11em" type="text" placeholder="Scrivi un messaggio" v-model="message" @keyup.enter="sendMessage"/>
+              <div class="typing_bar_icon d_flex">
+                <i class="fas fa-microphone"></i>
+              </div>  
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script>
+      dayjs().format();
+    </script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
